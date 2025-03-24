@@ -1,7 +1,7 @@
-// src/controllers/userController.ts
 import { Request, Response } from 'express';
 import User from '../models/User';
 
+// getUsers function to fetch all users and error handling
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
 	try {
 			const users = await User.find().sort({ lastLoginTime: -1 });
@@ -11,6 +11,7 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
 	}
 };
 
+// blockUsers function to block multiple users and error handling
 export const blockUsers = async (req: Request, res: Response) => {
     const { userIds } = req.body;
 
@@ -22,6 +23,7 @@ export const blockUsers = async (req: Request, res: Response) => {
     }
 };
 
+// unblockUsers function to unblock multiple users and error handling
 export const unblockUsers = async (req: Request, res: Response) => {
     const { userIds } = req.body;
 
@@ -33,6 +35,7 @@ export const unblockUsers = async (req: Request, res: Response) => {
     }
 };
 
+// deleteUsers function to delete multiple users and error handling
 export const deleteUsers = async (req: Request, res: Response) => {
     const { userIds } = req.body;
 

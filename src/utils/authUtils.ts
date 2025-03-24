@@ -1,15 +1,15 @@
-// src/utils/authUtils.ts
+
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
-// Extend the Request type to include the `user` property
+
 declare module 'express' {
     interface Request {
-        user?: any; // You can replace `any` with a more specific type if needed
+        user?: any; 
     }
 }
-
+//auth function to authenticate a user with the provided token and error handling
 export const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const token = req.header('Authorization')?.replace('Bearer ', '');
 

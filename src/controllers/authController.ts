@@ -1,9 +1,9 @@
-// src/controllers/authController.ts
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
+//register function to register a new user with the provided name, email, and password and error handling
 export const register = async (req: Request, res: Response): Promise<void> => {
     const { name, email, password } = req.body;
 
@@ -23,6 +23,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     }
 };
 
+//login function to authenticate a user with the provided email and password and error handling
 export const login = async (req: Request, res: Response): Promise<void> => {
 	const { email, password } = req.body;
 

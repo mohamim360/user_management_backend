@@ -4,7 +4,7 @@ import { authenticate } from '../utils/authUtils';
 import { getUsers, blockUsers, unblockUsers, deleteUsers } from '../controllers/userController';
 
 const router = express.Router();
-
+// User routes
 router.use(authenticate);
 
 router.get('/users', getUsers);

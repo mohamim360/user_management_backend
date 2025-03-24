@@ -1,6 +1,7 @@
-// src/models/User.ts
+
 import mongoose, { Document, Schema } from 'mongoose';
 
+// Define the interface of the User model
 export interface IUser extends Document {
     name: string;
     email: string;
@@ -9,6 +10,7 @@ export interface IUser extends Document {
     status: 'active' | 'blocked';
 }
 
+// Define the schema of the User model
 const UserSchema: Schema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
